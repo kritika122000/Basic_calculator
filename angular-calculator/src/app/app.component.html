@@ -1,0 +1,43 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div style="text-align:center">
+  <h1>Welcome to the Calculator</h1>
+</div>
+<div class="calculator" ng-app="myApp" ng-controller="ng-controller">
+  <div class="outer-window">
+    <div class="display" *ngIf="result !== undefined; else noResult">
+      {{ result }}
+    </div>
+  </div>
+  <ng-template #noResult class="display">
+    <div class="display">{{ num1 }} {{ operator }} {{ num2 }}</div>
+  </ng-template>
+  <div class="calculator-buttons">
+    <button class="c-button clear" id="14" (click)="clear()">C</button>
+    <button class="c-button divide op" id="10" (click)="setOperator(10)">
+      &divide;
+    </button>
+
+    <button class="c-button num" id="7" (click)="setNumber(7)">7</button>
+    <button class="c-button num" id="8" (click)="setNumber(8)">8</button>
+    <button class="c-button num" id="9" (click)="setNumber(9)">9</button>
+    <button class="c-button times op" id="11" (click)="setOperator(11)">
+      &times;
+    </button>
+
+    <button class="c-button num" id="4" (click)="setNumber(4)">4</button>
+    <button class="c-button num" id="5" (click)="setNumber(5)">5</button>
+    <button class="c-button num" id="6" (click)="setNumber(6)">6</button>
+    <button class="c-button minus op" id="12" (click)="setOperator(12)">
+      &minus;
+    </button>
+
+    <button class="c-button num" id="1" (click)="setNumber(1)">1</button>
+    <button class="c-button num" id="2" (click)="setNumber(2)">2</button>
+    <button class="c-button num" id="3" (click)="setNumber(3)">3</button>
+    <button class="c-button add op" id="13" (click)="setOperator(13)">+</button>
+
+    <button class="c-button zero num" id="0" (click)="setNumber(0)">0</button>
+    <button class="c-button equals" id="15" (click)="calculate(15)">=</button>
+  </div>
+</div>
